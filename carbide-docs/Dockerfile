@@ -11,9 +11,8 @@ RUN sed -i "s/trailingSlash: false/trailingSlash: true/g" docusaurus.config.js
 #RUN sed -i 's/docusaurus run/docusaurus run --host 0.0.0.0/g' package.json
 
 
-#RUN npm install
-#RUN npx docusaurus build
+RUN npm install
+RUN npx docusaurus build
 EXPOSE 3000
 
-CMD ["sleep", "50000"]
-#CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "start" ]
