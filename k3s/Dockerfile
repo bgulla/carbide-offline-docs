@@ -13,7 +13,7 @@ RUN npm install
 RUN npm run build
 
 ###---------
-FROM nginx:stable-alpine as deploy
+FROM cgr.dev/chainguard/nginx as deploy
 
 # copy over just the static html
 COPY --from=base /home/node/app/build /usr/share/nginx/html/

@@ -1,0 +1,12 @@
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: rancher-offline-docs
+spec:
+  label: Rancher Offline Docs
+  target: _blank
+  toService:
+    name: rancher-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
