@@ -16,3 +16,6 @@ RUN npx docusaurus build
 EXPOSE 3000
 
 CMD [ "npm", "run", "start" ]
+
+
+#/var/lib/nginx/html 
