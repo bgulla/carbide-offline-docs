@@ -16,4 +16,4 @@ RUN npm run build
 FROM nginx:stable-alpine as deploy
 
 # copy over just the static html
-COPY --chown=node:node --from=base /home/node/app/build /usr/share/nginx/html/
+COPY --from=base /home/node/app/build /usr/share/nginx/html/
