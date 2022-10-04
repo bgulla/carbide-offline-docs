@@ -90,3 +90,35 @@ spec:
   selector:
     app: kubewarden-offline-docs
 
+---
+# fleet
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleet-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: fleet-offline-docs
+
+---
+# harvester
+apiVersion: v1
+kind: Service
+metadata:
+  name: harvester-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: harvester-offline-docs
+
