@@ -1,3 +1,11 @@
+---
+#                       _
+#  _ __ __ _ _ __   ___| |__   ___ _ __
+# | '__/ _` | '_ \ / __| '_ \ / _ \ '__|
+# | | | (_| | | | | (__| | | |  __/ |
+# |_|  \__,_|_| |_|\___|_| |_|\___|_|
+#
+
 apiVersion: ui.cattle.io/v1
 kind: NavLink
 metadata:
@@ -7,6 +15,93 @@ spec:
   target: _blank
   toService:
     name: rancher-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
+
+
+---
+
+#  _                   _
+# | | ___  _ __   __ _| |__   ___  _ __ _ __
+# | |/ _ \| '_ \ / _` | '_ \ / _ \| '__| '_ \
+# | | (_) | | | | (_| | | | | (_) | |  | | | |
+# |_|\___/|_| |_|\__, |_| |_|\___/|_|  |_| |_|
+#                |___/
+
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: longhorn-offline-docs
+spec:
+  label: Longhorn Offline Docs
+  target: _blank
+  toService:
+    name: longhorn-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
+---
+
+#  _    _____
+# | | _|___ / ___
+# | |/ / |_ \/ __|
+# |   < ___) \__ \
+# |_|\_\____/|___/
+#
+
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: k3s-offline-docs
+spec:
+  label: k3s Offline Docs
+  target: _blank
+  toService:
+    name: k3s-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
+
+---
+
+#       _        ____
+#  _ __| | _____|___ \
+# | '__| |/ / _ \ __) |
+# | |  |   <  __// __/
+# |_|  |_|\_\___|_____|
+#
+
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: rke2-offline-docs
+spec:
+  label: RKE2 Offline Docs
+  target: _blank
+  toService:
+    name: rke2-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
+---
+
+#                 _     _     _
+#   ___ __ _ _ __| |__ (_) __| | ___
+#  / __/ _` | '__| '_ \| |/ _` |/ _ \
+# | (_| (_| | |  | |_) | | (_| |  __/
+#  \___\__,_|_|  |_.__/|_|\__,_|\___|
+#
+
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: carbide-offline-docs
+spec:
+  label: Carbide Offline Docs
+  target: _blank
+  toService:
+    name: carbide-offline-docs
     namespace: "{{ .Values.namespace }}"
     port: "80"
     scheme: http

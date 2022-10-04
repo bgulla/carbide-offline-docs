@@ -1,3 +1,5 @@
+---
+# rancher
 apiVersion: v1
 kind: Service
 metadata:
@@ -11,3 +13,64 @@ spec:
     targetPort: 80
   selector:
     app: rancher-offline-docs
+
+---
+# longhorn
+apiVersion: v1
+kind: Service
+metadata:
+  name: longhorn-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: longhorn-offline-docs
+---
+# rke2
+apiVersion: v1
+kind: Service
+metadata:
+  name: rke2-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: rke2-offline-docs
+---
+# k3s
+apiVersion: v1
+kind: Service
+metadata:
+  name: k3s-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: k3s-offline-docs
+---
+# rke2
+apiVersion: v1
+kind: Service
+metadata:
+  name: carbide-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: carbide-offline-docs

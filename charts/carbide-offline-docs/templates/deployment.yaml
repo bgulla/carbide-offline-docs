@@ -1,3 +1,5 @@
+---
+# Rancher
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,6 +22,118 @@ spec:
       containers:
         - name: rancher-offline-docs
           image: "{{ .Values.registry }}public/docs-rancher:{{ .Values.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+---
+# longhorn
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: longhorn-offline-docs
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: longhorn-offline-docs
+spec:
+  selector:
+    matchLabels:
+      app: longhorn-offline-docs
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: longhorn-offline-docs
+    spec:
+      containers:
+        - name: longhorn-offline-docs
+          image: "{{ .Values.registry }}public/docs-longhorn:{{ .Values.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+---
+# rke2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rke2-offline-docs
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: rke2-offline-docs
+spec:
+  selector:
+    matchLabels:
+      app: rke2-offline-docs
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: rke2-offline-docs
+    spec:
+      containers:
+        - name: rke2-offline-docs
+          image: "{{ .Values.registry }}public/docs-rke2:{{ .Values.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+
+---
+# k3s
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k3s-offline-docs
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: k3s-offline-docs
+spec:
+  selector:
+    matchLabels:
+      app: k3s-offline-docs
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: k3s-offline-docs
+    spec:
+      containers:
+        - name: k3s-offline-docs
+          image: "{{ .Values.registry }}public/docs-k3s:{{ .Values.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+
+---
+# carbide
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carbide-offline-docs
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: carbide-offline-docs
+spec:
+  selector:
+    matchLabels:
+      app: carbide-offline-docs
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: carbide-offline-docs
+    spec:
+      containers:
+        - name: carbide-offline-docs
+          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          image: bgulla/carbide-docs
           ports:
             - name: http
               containerPort: 80
