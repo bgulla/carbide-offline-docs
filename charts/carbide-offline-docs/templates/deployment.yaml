@@ -131,7 +131,9 @@ spec:
     spec:
       containers:
         - name: carbide-offline-docs
-          image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          image: bgulla/carbide-docs
           ports:
             - name: http
               containerPort: 80
