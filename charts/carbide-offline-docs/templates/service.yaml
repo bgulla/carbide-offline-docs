@@ -122,3 +122,19 @@ spec:
   selector:
     app: harvester-offline-docs
 
+---
+# rancher-desktop
+apiVersion: v1
+kind: Service
+metadata:
+  name: rd-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: rd-offline-docs
+

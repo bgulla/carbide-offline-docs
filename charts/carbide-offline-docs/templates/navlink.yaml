@@ -175,6 +175,27 @@ spec:
     scheme: http
 
 ---
+# Rancher Desktop
+apiVersion: ui.cattle.io/v1
+kind: NavLink
+metadata:
+  name: rd-offline-docs
+spec:
+  label: Rancher Desktop
+  target: _blank
+  description: developer container runtime
+  group: Airgap-friendly Docs
+  iconSrc:   data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAADMCAMAAACY78UPAAAAaVBMVEUAgb7///8AeLoAfLzc7PXS5vIAf72MvNsAfbwtjcQmjsWCttjn8/mly+MAebv1+/282Op0sNVao882kcZgpc/h7vacxeCy0eZqqNE5lcgWiMKKutqSwN3u9vrK4O4xj8XE3OwAc7hIm8tw66OxAAAE+ElEQVR4nO2d7XayOhBGk2BjqhgUUCxa23r/F/lCPT2iBLRAOoE8+1/XUpndEEI+h/EaYXbYvy3YNFi87Q9ZWJdkd3/PDrnQSklJHfBASKkCLfL5rNX78ywC6kitEIjzZ6N3GAtFHaA1lIhDs/dOTOXmNiPFyuQdC+rArCPimneUTLNi3xIk0a13lE+3ZldReXTjnfihXYgnVe/Uh5v8QpBevXfTf6RduTzVS+/QJ+1CPPzP++xL5b4g44v3ya/iLgr89O0d+1XcxTM9Lr23vhV3UeDbwnvuTxv2Q3AsvHPqKAjIOfOsEbsgQpZp6iAI0Gt28K96FxX8wFLfWrEStWcJdQwkJCyf9uCSGeljIwYAAAAAAAAAAAAAAAAAAPA8KrjnV5OIksk+sF8t/u8Z681PLY/3bJ79MRnogOWLXuRK62evpza1WJddxcWW3/Py1OoIGYjk8GnY1fFLom22z5/bCyBeat/uvGBJ3G/KeNJby3n9P9aZ0/4Zc4P37G+9ldgNJ/1NmD6+Krm3iN8H1i445Y9WoxB7S72qfWcQHhU5sXdwsqPN+aH9yqTeMqh/YzDaF8mTegtrpV2ybFtpR+mth36Q39G2CYbQW53tavP3lgIn9Da83g3MrlmczjtY2tbmLWun6by1hfeVe1aNBU7mrfb2tXnEmrqmZN5227AfGvvBVN6SRbUPW+Cz6Uan8lZx7bM2eG/qn1B5B5bfWX5YNFRwKm+9NgR5mi97sDMN2OwbKjiVt+Gz/PhVG+v7DdrUy2na9UVW3vWXtd47ldRb3XvnmHdQvykbn73PYmojVu57r+HdDTLv+m+9f6kr1SaFxLsSy1e9d/DcWL8B06vnKY3/51wRJ/G+hpKaQu16fWObXKE6IUHhvWgPr/MO0Ec96pnb3suuO0AfDRw57t392Aoxau/ur00PKrjb3j0u/6BzSe2dt0bX57gO0TqHTe3dWt69egdqM1rvp1dmGNFtE14ue8/6XVwmI/VOem5r1y13usPem96ndYjmiXx3vVcDHM4iMle9G9uxbJAzaRrX6VB7N5X3UMfo6dQ8J+Cmd5QOdhKPUsZ73UnvTA14II0Ur1k9Bve8o2wx8KG/UqvN+s7NsXGHcL1RevjTaKTSOk/OsUPjTNUxr4RprWydwSOlcnRckerEdupxZCrgDW94dwPe8Ia3G8Ab3vDuBrzH5S16bYstGaX3Z/7ak8Uova0AbzeAN7zhDW94wxve8IY3vOHtDvCGtxfef7Db30VvtZz/BUfnkkDWz7uzgmvaAAAAAADOIYWLWF+UK9PtzD22qW3x9p2TZPTbFQlveMMb3u4Bb3jDG97whje84Q1veLuIfe909uIes9T6fKGiHkozgmlSAAAAAAAAAAAAuENOcz4fLTJnH9QxkJAw+yNyDqJSdnBso8qfEMxZ56wuY0avWe/saGNEhKwl9+x0yTnjR/8qeHAsvLf+3ehiW3j3SuwySso0PKxHXraxUubRK7x57NerqiyzLpXenjVl30mXSu/BEkCMgktClm9vHvvTlgWX3GIXb/7hyzNdffCqd5T7Ia5eoxtvHiU+3OpB8nNS5Y93Ucen/3AT17yBV2++sr/7jBRVTa1V8eZhPOF1QUrE1SNHqt6cn85imtU8EOfbDMK33pzPlkxoqiQoNpBSacGW93kS771L9exwXkxlNCJfxIfMkBzyHx7Zd4SJsvF2AAAAAElFTkSuQmCC
+  #label: Rancher Desktop Docs
+  sideLabel: dev env
+  toService:
+    name: rd-offline-docs
+    namespace: "{{ .Values.namespace }}"
+    port: "80"
+    scheme: http
+
+---
+---
 
 apiVersion: ui.cattle.io/v1
 kind: NavLink
