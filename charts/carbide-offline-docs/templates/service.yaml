@@ -60,7 +60,7 @@ spec:
   selector:
     app: k3s-offline-docs
 ---
-# rke2
+# carbide
 apiVersion: v1
 kind: Service
 metadata:
@@ -74,3 +74,67 @@ spec:
     targetPort: 80
   selector:
     app: carbide-offline-docs
+---
+# kubewarden
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubewarden-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: kubewarden-offline-docs
+
+---
+# fleet
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleet-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: fleet-offline-docs
+
+---
+# harvester
+apiVersion: v1
+kind: Service
+metadata:
+  name: harvester-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: harvester-offline-docs
+
+---
+# rancher-desktop
+apiVersion: v1
+kind: Service
+metadata:
+  name: rd-offline-docs
+  namespace: "{{ .Values.namespace }}"
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: rd-offline-docs
+
