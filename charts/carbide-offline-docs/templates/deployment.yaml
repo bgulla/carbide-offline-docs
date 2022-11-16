@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: rancher-offline-docs
-          image: "{{ .Values.registry }}public/docs-rancher:{{ .Values.image.tag }}"
+          image: bgulla/docs-rancher
           ports:
             - name: http
               containerPort: 80
@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
         - name: longhorn-offline-docs
-          image: "{{ .Values.registry }}public/docs-longhorn:{{ .Values.image.tag }}"
+          image: bgulla/docs-longhorn
           ports:
             - name: http
               containerPort: 80
@@ -75,7 +75,7 @@ spec:
     spec:
       containers:
         - name: rke2-offline-docs
-          image: "{{ .Values.registry }}public/docs-rke2:{{ .Values.image.tag }}"
+          image: bgulla/docs-rke2
           ports:
             - name: http
               containerPort: 80
@@ -103,7 +103,7 @@ spec:
     spec:
       containers:
         - name: k3s-offline-docs
-          image: "{{ .Values.registry }}public/docs-k3s:{{ .Values.image.tag }}"
+          image: bgulla/docs-k3s
           ports:
             - name: http
               containerPort: 80
@@ -131,8 +131,8 @@ spec:
     spec:
       containers:
         - name: carbide-offline-docs
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
           image: bgulla/carbide-docs
           ports:
             - name: http
@@ -161,8 +161,8 @@ spec:
     spec:
       containers:
         - name: kubewarden-offline-docs
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
           image: bgulla/kubewarden-docs
           ports:
             - name: http
@@ -191,8 +191,8 @@ spec:
     spec:
       containers:
         - name: fleet-offline-docs
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
           image: bgulla/fleet-docs
           ports:
             - name: http
@@ -221,8 +221,8 @@ spec:
     spec:
       containers:
         - name: harvester-offline-docs
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
-          #image: "{{ .Values.registry }}public/docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
+          #image: "{{ .Values.registry }}docs-carbide:{{ .Values.image.tag }}"
           image: bgulla/harvester-docs
           ports:
             - name: http
